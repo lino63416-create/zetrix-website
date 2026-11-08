@@ -60,8 +60,27 @@ export default function Footer({ t, lang }: { t: Dictionary; lang: Locale }) {
           </ul>
         </div>
       </div>
-      <div className="relative mt-14 border-t border-white/10 py-6 text-center text-sm text-white/50">
-        © {new Date().getFullYear()} ZETRIX. {t.footer.rights}
+      <div className="relative mt-14 border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-white/50 sm:flex-row sm:px-6 lg:px-8">
+          <span>
+            © {new Date().getFullYear()} ZETRIX. {t.footer.rights}
+          </span>
+          <span className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+            {contact.crNumber && (
+              <span>
+                {t.footer.cr}: <span dir="ltr">{contact.crNumber}</span>
+              </span>
+            )}
+            {contact.vatNumber && (
+              <span>
+                {t.footer.vat}: <span dir="ltr">{contact.vatNumber}</span>
+              </span>
+            )}
+            <Link href={`${base}/privacy`} className="transition-colors hover:text-gold-400">
+              {t.footer.privacy}
+            </Link>
+          </span>
+        </div>
       </div>
     </footer>
   );

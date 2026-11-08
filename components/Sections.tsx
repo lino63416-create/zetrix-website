@@ -638,7 +638,7 @@ export function ClosingSection({ t }: P) {
   );
 }
 
-export function ContactSection({ t }: P) {
+export function ContactSection({ t, lang = "ar" }: P) {
   const items = [
     { icon: PhoneIcon, label: t.contactSection.phone, value: contact.phone, href: contact.phoneHref, ltr: true },
     { icon: MailIcon, label: t.contactSection.email, value: contact.email, href: `mailto:${contact.email}`, ltr: true },
@@ -681,6 +681,21 @@ export function ContactSection({ t }: P) {
           </a>
         </div>
         <QuoteForm f={t.contactSection.form} services={t.services.items.map((x) => x.title)} />
+      </div>
+      <div className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h3 className="mb-5 flex items-center gap-3 text-2xl font-extrabold text-navy-900">
+          <PinIcon className="h-6 w-6 text-gold-500" />
+          {t.contactSection.mapTitle}
+        </h3>
+        <div className="overflow-hidden rounded-3xl border border-steel-100 bg-white shadow-sm">
+          <iframe
+            title={t.contactSection.mapTitle}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&hl=${lang}&z=12&output=embed`}
+            className="h-[380px] w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </div>
     </section>
   );

@@ -10,6 +10,11 @@ export const contact = {
   email: "zetrixfa@gmail.com",
   website: "zetrix-website.vercel.app/ar",
   whatsapp: "966148184240", // international format, digits only
+  // Google Maps location shown on the contact page. Replace with the factory's exact
+  // address or "lat,lng" coordinates (e.g. "24.4672,39.6111") for a precise pin.
+  mapQuery: "Al Madinah Al Munawwarah, Saudi Arabia",
+  crNumber: "", // commercial registration number (shown in the footer when filled)
+  vatNumber: "", // VAT registration number (shown in the footer when filled)
 };
 
 const en = {
@@ -426,8 +431,14 @@ const en = {
       error: "Sending failed. Please try again or send your request via WhatsApp.",
       required: "Please fill in your name, mobile number and project details.",
       waIntro: "Hello ZETRIX, I would like to request a quote.",
+      attach: "Attach drawings (optional)",
+      attachHint: "PDF, DWG, DXF, images or ZIP — up to 5 MB. For several files, put them in one ZIP.",
+      tooLarge: "The file is larger than 5 MB. Please compress it or send it by email.",
+      chooseFile: "Choose file",
+      noFile: "No file selected",
     },
     whatsapp: "Chat with us on WhatsApp",
+    mapTitle: "Find us",
   },
   pages: {
     home: "Home",
@@ -437,6 +448,7 @@ const en = {
     policies: { title: "Our Policies", text: "The quality, safety and environmental commitments that guide every stage of our work." },
     projects: { title: "Our Works", text: "Selected projects and the partners we build with." },
     contact: { title: "Contact Us", text: "Tell us about your project and our technical team will get back to you." },
+    privacy: { title: "Privacy Policy", text: "How ZETRIX handles the information you send through this website." },
     products: { title: "Order Products", text: "Choose products and quantities, see an estimated price, and send your order in one step." },
     viewAllServices: "View all services",
     learnMore: "Learn more about us",
@@ -481,6 +493,9 @@ const en = {
   footer: {
     rights: "All rights reserved.",
     links: "Quick links",
+    privacy: "Privacy Policy",
+    cr: "CR No.",
+    vat: "VAT No.",
     contact: "Get in touch",
     about: "Heavy and light steel structures, cable trays, prefabricated systems and precision aluminum works, manufactured in Madinah, Saudi Arabia.",
   },
@@ -902,8 +917,14 @@ const ar: Dictionary = {
       error: "تعذّر الإرسال. حاول مرة أخرى أو أرسل طلبك عبر واتساب.",
       required: "يرجى كتابة الاسم ورقم الجوال وتفاصيل المشروع.",
       waIntro: "مرحباً زيتركس، أرغب في طلب عرض سعر.",
+      attach: "إرفاق المخططات (اختياري)",
+      attachHint: "PDF أو DWG أو DXF أو صور أو ZIP، بحد أقصى 5 ميجا. لأكثر من ملف ضعها في ملف ZIP واحد.",
+      tooLarge: "حجم الملف أكبر من 5 ميجا. اضغطه أو أرسله عبر البريد.",
+      chooseFile: "اختر ملفاً",
+      noFile: "لم يتم اختيار ملف",
     },
     whatsapp: "تواصل معنا عبر واتساب",
+    mapTitle: "موقعنا على الخريطة",
   },
   pages: {
     home: "الرئيسية",
@@ -913,6 +934,7 @@ const ar: Dictionary = {
     policies: { title: "سياساتنا", text: "التزاماتنا في الجودة والسلامة والبيئة التي توجّه كل مرحلة من عملنا." },
     projects: { title: "أعمالنا", text: "مختارات من مشاريعنا، والشركاء الذين نبني معهم." },
     contact: { title: "تواصل معنا", text: "أخبرنا عن مشروعك، وسيتواصل معك فريقنا الفني." },
+    privacy: { title: "سياسة الخصوصية", text: "كيف تتعامل زيتركس مع المعلومات التي ترسلها عبر هذا الموقع." },
     products: { title: "طلب المنتجات", text: "اختر المنتجات والكميات، واطّلع على السعر التقديري، وأرسل طلبك بخطوة واحدة." },
     viewAllServices: "عرض جميع الخدمات",
     learnMore: "تعرّف علينا أكثر",
@@ -957,6 +979,9 @@ const ar: Dictionary = {
   footer: {
     rights: "جميع الحقوق محفوظة.",
     links: "روابط سريعة",
+    privacy: "سياسة الخصوصية",
+    cr: "السجل التجاري",
+    vat: "الرقم الضريبي",
     contact: "تواصل معنا",
     about: "هياكل معدنية ثقيلة وخفيفة، ومجاري كابلات، وأنظمة تصنيع مسبق، وأعمال ألمنيوم دقيقة، تُصنَّع في المدينة المنورة.",
   },

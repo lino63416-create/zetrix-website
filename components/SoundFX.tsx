@@ -13,7 +13,7 @@ import { SoundOffIcon, SoundOnIcon } from "./Icons";
  * and the choice is remembered.
  */
 
-const STORAGE_KEY = "zetrix-sound";
+const STORAGE_KEY = "zetrix-sound-v2"; // v2: default changed to off
 const HOVER_SELECTOR = "header a, a.rounded-full, button";
 const MUSIC_VOLUME = 0.16;
 
@@ -49,18 +49,19 @@ function makeReverb(ctx: AudioContext, seconds = 4) {
 }
 
 export default function SoundFX({ labels }: { labels: { soundOn: string; soundOff: string } }) {
-  const [enabled, setEnabled] = useState(true);
+  // sound is off until the visitor turns it on (remembered in this browser)
+  const [enabled, setEnabled] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const enabledRef = useRef(true);
+  const enabledRef = useRef(false);
   const engineRef = useRef<Engine | null>(null);
   const lastHover = useRef<Element | null>(null);
   const lastHoverTime = useRef(0);
 
   useEffect(() => {
     try {
-      if (localStorage.getItem(STORAGE_KEY) === "off") {
-        setEnabled(false);
-        enabledRef.current = false;
+      if (localStorage.getItem(STORAGE_KEY) === "on") {
+        setEnabled(true);
+        enabledRef.current = true;
       }
     } catch {}
   }, []);

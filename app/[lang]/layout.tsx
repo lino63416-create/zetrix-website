@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { dictionaries, isLocale, locales } from "@/lib/content";
+import { contact, dictionaries, isLocale, locales } from "@/lib/content";
 import "@fontsource/alexandria/500.css";
 import "@fontsource/alexandria/600.css";
 import "@fontsource/alexandria/700.css";
@@ -49,7 +49,7 @@ export async function generateMetadata({
     openGraph: {
       title: t.meta.title,
       description: t.meta.description,
-      images: ["/images/steel-1.jpg"],
+      images: ["/images/facility-front.jpg"],
       locale: lang === "ar" ? "ar_SA" : "en_US",
     },
   };
@@ -91,6 +91,29 @@ export default async function LangLayout({
         <Footer t={t} lang={lang} />
         <WhatsAppButton label={t.contactSection.whatsapp} text={t.contactSection.form.waIntro} />
         <Analytics />
+        <script
+          type="application/ld+json"
+          // structured data so search engines show the factory as a business
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: isAr ? "زيتركس للصناعات المعدنية" : "ZETRIX Metal Industries",
+              alternateName: isAr ? "ZETRIX Metal Industries" : "زيتركس للصناعات المعدنية",
+              url: `https://zetrix-website.vercel.app/${lang}`,
+              logo: "https://zetrix-website.vercel.app/images/logo.jpg",
+              image: "https://zetrix-website.vercel.app/images/facility-front.jpg",
+              email: contact.email,
+              telephone: contact.phone.replace(/\s/g, ""),
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: isAr ? "المدينة المنورة" : "Madinah",
+                addressCountry: "SA",
+              },
+              description: t.meta.description,
+            }),
+          }}
+        />
       </body>
     </html>
   );
