@@ -10,6 +10,7 @@ export default function Footer({ t, lang }: { t: Dictionary; lang: Locale }) {
     { href: `${base}/about`, label: t.nav.about },
     { href: `${base}/facility`, label: t.nav.facility },
     { href: `${base}/services`, label: t.nav.services },
+    { href: `${base}/products`, label: t.nav.products },
     { href: `${base}/policies`, label: t.nav.policies },
     { href: `${base}/projects`, label: t.nav.projects },
     { href: `${base}/contact`, label: t.nav.contact },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { dictionaries, isLocale, type Dictionary, type Locale } from "./content";
 
-export type PageKey = "about" | "facility" | "services" | "policies" | "projects" | "contact";
+export type PageKey = "about" | "facility" | "services" | "policies" | "projects" | "contact" | "products";
 export type PageParams = { params: Promise<{ lang: string }> };
 
 export async function resolve({ params }: PageParams): Promise<{ t: Dictionary; lang: Locale }> {

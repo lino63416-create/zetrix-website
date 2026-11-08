@@ -36,6 +36,7 @@ export default function Header({
     { href: `${base}/about`, label: t.about },
     { href: `${base}/facility`, label: t.facility },
     { href: `${base}/services`, label: t.services },
+    { href: `${base}/products`, label: t.products },
     { href: `${base}/policies`, label: t.policies },
     { href: `${base}/projects`, label: t.projects },
     { href: `${base}/contact`, label: t.contact },
