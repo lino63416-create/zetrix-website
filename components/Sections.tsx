@@ -683,14 +683,25 @@ export function ContactSection({ t, lang = "ar" }: P) {
         <QuoteForm f={t.contactSection.form} services={t.services.items.map((x) => x.title)} />
       </div>
       <div className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h3 className="mb-5 flex items-center gap-3 text-2xl font-extrabold text-navy-900">
-          <PinIcon className="h-6 w-6 text-gold-500" />
-          {t.contactSection.mapTitle}
-        </h3>
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
+          <h3 className="flex items-center gap-3 text-2xl font-extrabold text-navy-900">
+            <PinIcon className="h-6 w-6 text-gold-500" />
+            {t.contactSection.mapTitle}
+          </h3>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${contact.mapQuery}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-700"
+          >
+            {t.contactSection.directions}
+            <ArrowIcon className="h-4 w-4 rtl:rotate-180" />
+          </a>
+        </div>
         <div className="overflow-hidden rounded-3xl border border-steel-100 bg-white shadow-sm">
           <iframe
             title={t.contactSection.mapTitle}
-            src={`https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&hl=${lang}&z=12&output=embed`}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&hl=${lang}&z=15&output=embed`}
             className="h-[380px] w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

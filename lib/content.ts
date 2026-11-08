@@ -12,7 +12,7 @@ export const contact = {
   whatsapp: "966148184240", // international format, digits only
   // Google Maps location shown on the contact page. Replace with the factory's exact
   // address or "lat,lng" coordinates (e.g. "24.4672,39.6111") for a precise pin.
-  mapQuery: "Al Madinah Al Munawwarah, Saudi Arabia",
+  mapQuery: "24.274478,39.549014", // 24°16'28.12"N 39°32'56.45"E
   crNumber: "", // commercial registration number (shown in the footer when filled)
   vatNumber: "", // VAT registration number (shown in the footer when filled)
 };
@@ -439,6 +439,7 @@ const en = {
     },
     whatsapp: "Chat with us on WhatsApp",
     mapTitle: "Find us",
+    directions: "Get directions",
   },
   pages: {
     home: "Home",
@@ -925,6 +926,7 @@ const ar: Dictionary = {
     },
     whatsapp: "تواصل معنا عبر واتساب",
     mapTitle: "موقعنا على الخريطة",
+    directions: "الاتجاهات إلى المصنع",
   },
   pages: {
     home: "الرئيسية",

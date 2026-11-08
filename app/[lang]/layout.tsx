@@ -20,7 +20,6 @@ import "@fontsource/manrope/700.css";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SoundFX from "@/components/SoundFX";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -84,7 +83,6 @@ export default async function LangLayout({
     >
       <body className="font-sans antialiased">
         <Header t={t.nav} homeLabel={t.pages.home} lang={lang} />
-        <SoundFX labels={{ soundOn: t.nav.soundOn, soundOff: t.nav.soundOff }} />
         <ScrollTop label={t.nav.toTop} />
         <Reveal />
         {children}
@@ -109,6 +107,10 @@ export default async function LangLayout({
                 "@type": "PostalAddress",
                 addressLocality: isAr ? "المدينة المنورة" : "Madinah",
                 addressCountry: "SA",
+              },
+              location: {
+                "@type": "Place",
+                geo: { "@type": "GeoCoordinates", latitude: 24.274478, longitude: 39.549014 },
               },
               description: t.meta.description,
             }),
