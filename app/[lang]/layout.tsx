@@ -21,7 +21,6 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BrandMarquee from "@/components/BrandMarquee";
-import EdgeTools from "@/components/EdgeTools";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -85,7 +84,6 @@ export default async function LangLayout({
     >
       <body className="font-sans antialiased">
         <Header t={t.nav} homeLabel={t.pages.home} lang={lang} />
-        <EdgeTools />
         <ScrollTop label={t.nav.toTop} />
         <Reveal />
         {children}
