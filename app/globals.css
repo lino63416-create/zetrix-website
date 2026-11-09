@@ -249,3 +249,17 @@ main li p {
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation-duration: 120s; }
 }
+
+/* ---------- Floating tool drawings in the side margins ---------- */
+.edge-tool {
+  opacity: 0.5;
+  filter: drop-shadow(0 0 6px rgba(226, 185, 86, 0.35));
+  animation: tool-float 9s ease-in-out infinite;
+}
+@keyframes tool-float {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-14px) rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .edge-tool { animation: none; }
+}
