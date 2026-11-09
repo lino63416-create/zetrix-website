@@ -20,6 +20,7 @@ import "@fontsource/manrope/700.css";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BrandMarquee from "@/components/BrandMarquee";
 import ScrollTop from "@/components/ScrollTop";
 import Reveal from "@/components/Reveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -86,6 +87,7 @@ export default async function LangLayout({
         <ScrollTop label={t.nav.toTop} />
         <Reveal />
         {children}
+        <BrandMarquee variant="navy" />
         <Footer t={t} lang={lang} />
         <WhatsAppButton label={t.contactSection.whatsapp} text={t.contactSection.form.waIntro} />
         <Analytics />

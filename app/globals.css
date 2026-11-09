@@ -233,3 +233,19 @@ main li p {
 @media (prefers-reduced-motion: reduce) {
   .wa-ping { animation: none !important; }
 }
+
+/* ---------- Brand marquee ---------- */
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation-duration: 120s; }
+}
