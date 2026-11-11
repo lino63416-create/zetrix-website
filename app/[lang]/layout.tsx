@@ -98,8 +98,8 @@ export default async function LangLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: isAr ? "زيتركس للصناعات المعدنية" : "ZETRIX Metal Industries",
-              alternateName: isAr ? "ZETRIX Metal Industries" : "زيتركس للصناعات المعدنية",
+              name: isAr ? "زيتريكس للصناعات المعدنية" : "ZETRIX Metal Industries",
+              alternateName: isAr ? "ZETRIX Metal Industries" : "زيتريكس للصناعات المعدنية",
               url: `https://zetrix-website.vercel.app/${lang}`,
               logo: "https://zetrix-website.vercel.app/images/logo.jpg",
               image: "https://zetrix-website.vercel.app/images/facility-front.jpg",
