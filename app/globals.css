@@ -249,3 +249,7 @@ main li p {
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation-duration: 120s; }
 }
+/* Arabic pages: the band moves in the reading direction (left to right) */
+.marquee-rtl {
+  animation-direction: reverse;
+}

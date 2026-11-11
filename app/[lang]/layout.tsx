@@ -87,7 +87,7 @@ export default async function LangLayout({
         <ScrollTop label={t.nav.toTop} />
         <Reveal />
         {children}
-        <BrandMarquee variant="navy" />
+        <BrandMarquee lang={lang} variant="navy" />
         <Footer t={t} lang={lang} />
         <WhatsAppButton label={t.contactSection.whatsapp} text={t.contactSection.form.waIntro} />
         <Analytics />

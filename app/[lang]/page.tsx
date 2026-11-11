@@ -15,7 +15,7 @@ export default async function Home(props: PageParams) {
   return (
     <main id="top">
       <HeroSection t={t} lang={lang} />
-      <BrandMarquee />
+      <BrandMarquee lang={lang} />
       <AboutSection t={t} lang={lang} teaser />
       <WhySection t={t} lang={lang} />
       <ServicesSection t={t} lang={lang} limit={3} />

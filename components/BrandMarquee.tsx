@@ -1,44 +1,45 @@
 import Image from "next/image";
+import type { Locale } from "@/lib/content";
 
-/** Endless moving band with the ZETRIX logo and name (pure CSS, pauses on hover). */
-export default function BrandMarquee({ variant = "gold" }: { variant?: "gold" | "navy" }) {
-  const items = Array.from({ length: 6 });
+/** Endless moving band with the ZETRIX emblem and the company name in the page language. */
+export default function BrandMarquee({ lang, variant = "gold" }: { lang: Locale; variant?: "gold" | "navy" }) {
+  const name = lang === "ar" ? "زيتركس للصناعات المعدنية" : "ZETRIX Metal Industries";
   const gold = variant === "gold";
+  const items = Array.from({ length: 6 });
   const group = (hidden: boolean) => (
     <div className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
       {items.map((_, i) => (
-        <div key={i} className="flex items-center gap-4 px-8">
+        <div key={i} className={`flex items-center gap-4 px-8 ${lang === "ar" ? "flex-row-reverse" : ""}`}>
           <Image
-            src="/images/logo.jpg"
+            src="/images/logo-emblem.png"
             alt={hidden || i > 0 ? "" : "ZETRIX"}
-            width={40}
-            height={46}
-            className={`h-10 w-auto rounded-md ${gold ? "ring-2 ring-navy-950/20" : "ring-1 ring-gold-400/40"}`}
+            width={64}
+            height={48}
+            className="h-12 w-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]"
           />
-          <span className={`font-display text-2xl font-extrabold tracking-[0.2em] ${gold ? "text-navy-950" : "text-gold-gradient"}`}>
-            ZETRIX
+          <span
+            dir={lang === "ar" ? "rtl" : "ltr"}
+            className={`whitespace-nowrap font-display text-2xl font-extrabold ${
+              lang === "en" ? "tracking-wide" : ""
+            } ${gold ? "text-navy-950" : "text-gold-gradient"}`}
+          >
+            {name}
           </span>
-          <span className={`font-display text-xl font-bold ${gold ? "text-navy-900" : "text-white"}`} dir="rtl">
-            زيتركس للصناعات المعدنية
-          </span>
-          <span className={`text-sm font-semibold uppercase tracking-[0.25em] ${gold ? "text-navy-900/70" : "text-white/60"}`}>
-            Metal Industries
-          </span>
-          <span className={`ms-4 h-2.5 w-2.5 rotate-45 ${gold ? "bg-navy-950" : "bg-gold-400"}`} />
+          <span className={`mx-3 h-2.5 w-2.5 rotate-45 ${gold ? "bg-navy-950" : "bg-gold-400"}`} />
         </div>
       ))}
     </div>
   );
   return (
     <div
-      className={`marquee relative overflow-hidden border-y py-4 ${
+      className={`marquee relative overflow-hidden border-y py-3 ${
         gold
           ? "border-gold-500/40 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500"
           : "border-gold-400/20 bg-navy-950"
       }`}
       dir="ltr"
     >
-      <div className="marquee-track flex w-max">
+      <div className={`marquee-track flex w-max ${lang === "ar" ? "marquee-rtl" : ""}`}>
         {group(false)}
         {group(true)}
       </div>
