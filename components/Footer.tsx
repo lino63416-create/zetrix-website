@@ -21,7 +21,7 @@ export default function Footer({ t, lang }: { t: Dictionary; lang: Locale }) {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/images/zetrix-emblem.png" alt="" width={70} height={55} className="h-14 w-auto" />
+            <Image src="/images/zetrix-emblem-light.png" alt="" width={70} height={55} className="h-14 w-auto" />
             <span className="text-gold-gradient font-display text-2xl font-extrabold tracking-[0.18em]">ZETRIX</span>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed">{t.footer.about}</p>

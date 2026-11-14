@@ -11,7 +11,7 @@ export default function BrandMarquee({ lang, variant = "gold" }: { lang: Locale;
       {items.map((_, i) => (
         <div key={i} className={`flex items-center gap-4 px-8 ${lang === "ar" ? "flex-row-reverse" : ""}`}>
           <Image
-            src="/images/zetrix-emblem.png"
+            src="/images/zetrix-emblem-light.png"
             alt={hidden || i > 0 ? "" : "ZETRIX"}
             width={64}
             height={48}

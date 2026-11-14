@@ -57,7 +57,7 @@ export default function Header({
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href={base} className="flex items-center gap-3">
           <Image
-            src="/images/zetrix-emblem.png"
+            src="/images/zetrix-emblem-light.png"
             alt="ZETRIX"
             width={62}
             height={49}
