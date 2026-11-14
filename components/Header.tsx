@@ -57,11 +57,11 @@ export default function Header({
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href={base} className="flex items-center gap-3">
           <Image
-            src="/images/logo.jpg"
+            src="/images/logo-emblem.png"
             alt="ZETRIX"
-            width={44}
-            height={51}
-            className="h-11 w-auto rounded-md"
+            width={62}
+            height={49}
+            className="h-12 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
             priority
           />
           <span className="text-gold-gradient font-display text-xl font-extrabold tracking-[0.18em]">ZETRIX</span>

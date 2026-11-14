@@ -101,7 +101,7 @@ export default async function LangLayout({
               name: isAr ? "زيتريكس للصناعات المعدنية" : "ZETRIX Metal Industries",
               alternateName: isAr ? "ZETRIX Metal Industries" : "زيتريكس للصناعات المعدنية",
               url: `https://zetrix-website.vercel.app/${lang}`,
-              logo: "https://zetrix-website.vercel.app/images/logo.jpg",
+              logo: "https://zetrix-website.vercel.app/images/logo.png",
               image: "https://zetrix-website.vercel.app/images/facility-front.jpg",
               email: contact.email,
               telephone: contact.phone.replace(/\s/g, ""),

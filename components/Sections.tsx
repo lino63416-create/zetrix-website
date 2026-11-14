@@ -152,11 +152,11 @@ export function HeroSection({ t, lang }: P) {
           <div className="relative">
             <div className="absolute -inset-6 rounded-full bg-gold-400/20 blur-3xl" />
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.png"
               alt="ZETRIX Metal Industries logo"
-              width={380}
-              height={440}
-              className="relative rounded-3xl shadow-2xl ring-1 ring-gold-400/30"
+              width={420}
+              height={460}
+              className="relative drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
             />
           </div>
         </div>

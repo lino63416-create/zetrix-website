@@ -3,7 +3,7 @@ import type { Locale } from "@/lib/content";
 
 /** Endless moving band with the ZETRIX emblem and the company name in the page language. */
 export default function BrandMarquee({ lang, variant = "gold" }: { lang: Locale; variant?: "gold" | "navy" }) {
-  const name = lang === "ar" ? "زيتريكس للصناعات المعدنية" : "ZETRIX Metal Industries";
+  const name = lang === "ar" ? "زيتريكس للصناعات المعدنية" : "Zetrix Metal Industries";
   const gold = variant === "gold";
   const items = Array.from({ length: 6 });
   const group = (hidden: boolean) => (
