@@ -152,7 +152,7 @@ export function HeroSection({ t, lang }: P) {
           <div className="relative">
             <div className="absolute -inset-6 rounded-full bg-gold-400/20 blur-3xl" />
             <Image
-              src="/images/logo.png"
+              src="/images/zetrix-logo.png"
               alt="ZETRIX Metal Industries logo"
               width={420}
               height={460}
