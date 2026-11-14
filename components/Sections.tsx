@@ -150,13 +150,14 @@ export function HeroSection({ t, lang }: P) {
 
         <div className="hidden justify-center lg:flex">
           <div className="relative">
-            <div className="absolute -inset-6 rounded-full bg-gold-400/20 blur-3xl" />
+            <div className="absolute -inset-6 rounded-[2.5rem] bg-gold-400/20 blur-3xl" />
             <Image
-              src="/images/zetrix-logo.png"
+              src="/images/zetrix-logo-black.jpg"
               alt="ZETRIX Metal Industries logo"
-              width={420}
-              height={460}
-              className="relative drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
+              width={440}
+              height={440}
+              priority
+              className="relative rounded-[2rem] bg-black shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] ring-1 ring-gold-400/40"
             />
           </div>
         </div>
