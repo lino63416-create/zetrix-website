@@ -13,7 +13,7 @@ export const contact = {
   // Google Maps location shown on the contact page. Replace with the factory's exact
   // address or "lat,lng" coordinates (e.g. "24.4672,39.6111") for a precise pin.
   mapQuery: "24.274478,39.549014", // 24°16'28.12"N 39°32'56.45"E
-  crNumber: "", // commercial registration number (shown in the footer when filled)
+  crNumber: "7053652009", // unified national number (commercial registration)
   vatNumber: "", // VAT registration number (shown in the footer when filled)
 };
 
@@ -409,7 +409,7 @@ const en = {
     email: "Email",
     website: "Website",
     address: "Address",
-    addressValue: "Madinah, Saudi Arabia",
+    addressValue: "8659 Yahya Ibn Ismail Al Muhajir St., Sikkah Al Hadid Dist., Madinah 42377",
     emailCta: "Email Us",
     callCta: "Call Us",
     form: {
@@ -490,6 +490,30 @@ const en = {
     viewCart: "View order",
     items: "items",
     waIntro: "Hello ZETRIX, I would like to place this order:",
+  },
+  certs: {
+    eyebrow: "Licenses & Certificates",
+    title: "Officially registered and licensed",
+    text: "ZETRIX Metal Industries is a registered Saudi company, licensed by the Ministry of Industry and Mineral Resources. Click any document to view it in full.",
+    view: "View document",
+    close: "Close",
+    stripTitle: "Registered & licensed in the Kingdom of Saudi Arabia",
+    viewAll: "View our certificates",
+    items: [
+      { id: "commercial-registration", title: "Commercial Registration", issuer: "Ministry of Commerce", detail: "Unified No. 7053652009 · Active" },
+      { id: "industrial-license", title: "Industrial Facility License", issuer: "Ministry of Industry and Mineral Resources", detail: "License No. 4708249943 · valid until 12-02-2027" },
+      { id: "national-address", title: "National Address", issuer: "Saudi Post (SPL)", detail: "Short address DMSB8659 · Madinah" },
+    ],
+    activitiesTitle: "Licensed activities",
+    activities: [
+      "Manufacture of metal structures and their parts",
+      "Manufacture of prefabricated steel structure units",
+      "Manufacture and installation of prefabricated steel constructions for industrial facilities",
+      "Manufacture and installation of scaffolding",
+      "Manufacture and installation of windows and doors",
+      "Manufacture and installation of stairs",
+      "Manufacture and installation of shades and canopies",
+    ],
   },
   footer: {
     rights: "All rights reserved.",
@@ -896,7 +920,7 @@ const ar: Dictionary = {
     email: "البريد الإلكتروني",
     website: "الموقع الإلكتروني",
     address: "العنوان",
-    addressValue: "المدينة المنورة، المملكة العربية السعودية",
+    addressValue: "8659 شارع يحيى بن إسماعيل المهاجر، حي سكة الحديد، المدينة المنورة 42377",
     emailCta: "راسلنا",
     callCta: "اتصل بنا",
     form: {
@@ -977,6 +1001,30 @@ const ar: Dictionary = {
     viewCart: "عرض الطلب",
     items: "منتجات",
     waIntro: "مرحباً زيتريكس، أرغب في طلب ما يلي:",
+  },
+  certs: {
+    eyebrow: "التراخيص والشهادات",
+    title: "منشأة مسجّلة ومرخّصة رسمياً",
+    text: "مصنع زيتريكس للصناعات المعدنية شركة سعودية مسجّلة، ومرخّصة من وزارة الصناعة والثروة المعدنية. اضغط على أي وثيقة لعرضها كاملة.",
+    view: "عرض الوثيقة",
+    close: "إغلاق",
+    stripTitle: "مسجّلون ومرخّصون في المملكة العربية السعودية",
+    viewAll: "اطّلع على شهاداتنا",
+    items: [
+      { id: "commercial-registration", title: "شهادة السجل التجاري", issuer: "وزارة التجارة", detail: "الرقم الوطني الموحد 7053652009 · نشط" },
+      { id: "industrial-license", title: "ترخيص منشأة صناعية", issuer: "وزارة الصناعة والثروة المعدنية", detail: "رقم الترخيص 4708249943 · ساري حتى 12-02-2027" },
+      { id: "national-address", title: "إثبات العنوان الوطني", issuer: "سبل - البريد السعودي", detail: "العنوان المختصر DMSB8659 · المدينة المنورة" },
+    ],
+    activitiesTitle: "الأنشطة المرخّصة",
+    activities: [
+      "صناعة الهياكل المعدنية وأجزائها",
+      "صناعة وحدات الهياكل الحديدية الجاهزة",
+      "صناعة وتركيب الإنشاءات الفولاذية سابقة الصنع للمنشآت الصناعية",
+      "صناعة وتركيب السقالات",
+      "صناعة وتركيب النوافذ والأبواب",
+      "صناعة وتركيب السلالم",
+      "صناعة وتركيب المظلات",
+    ],
   },
   footer: {
     rights: "جميع الحقوق محفوظة.",

@@ -7,6 +7,7 @@ import {
   ServicesSection,
   WhySection,
 } from "@/components/Sections";
+import { CertificatesStrip } from "@/components/Certificates";
 import BrandMarquee from "@/components/BrandMarquee";
 import { resolve, type PageParams } from "@/lib/page";
 
@@ -17,6 +18,7 @@ export default async function Home(props: PageParams) {
       <HeroSection t={t} lang={lang} />
       <BrandMarquee lang={lang} />
       <AboutSection t={t} lang={lang} teaser />
+      <CertificatesStrip c={t.certs} lang={lang} />
       <WhySection t={t} lang={lang} />
       <ServicesSection t={t} lang={lang} limit={3} />
       <ProjectsSection t={t} lang={lang} />
