@@ -45,6 +45,7 @@ export async function generateMetadata({
     metadataBase: new URL("https://zetrix-website.vercel.app"),
     title: t.meta.title,
     description: t.meta.description,
+    manifest: "/manifest.json",
     alternates: { languages: { en: "/en", ar: "/ar" } },
     openGraph: {
       title: t.meta.title,
@@ -117,8 +118,21 @@ export default async function LangLayout({
               description: t.meta.description,
             }),
           }}
+        />        
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js');
+                });
+              }
+            `,
+          }}
         />
       </body>
     </html>
   );
 }
+
+
