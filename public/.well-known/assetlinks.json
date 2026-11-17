@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.zetrix_website.twa",
+        "sha256_cert_fingerprints": ["E8:85:01:DA:60:63:43:AE:04:2C:D5:C4:83:A3:5C:5F:4B:7C:A5:1E:20:4D:D7:5F:0C:1F:3D:76:8C:8E:E0:82"]
+      }
+    }]
