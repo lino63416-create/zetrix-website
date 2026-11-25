@@ -41,32 +41,37 @@ export function CertificatesSection({ c }: { c: C }) {
           <h2 className="text-gold-gradient mt-4 text-3xl font-extrabold sm:text-4xl">{c.title}</h2>
           <p className="mt-5 text-lg text-white/75">{c.text}</p>
         </div>
-        <ul className="mt-14 grid gap-6 md:grid-cols-3">
+        <ul className="mt-16 grid gap-x-8 gap-y-14 md:grid-cols-3">
           {c.items.map((it, i) => (
-            <li key={it.id}>
-              <button
-                type="button"
-                onClick={() => setOpen(i)}
-                className="group glass-card card-lift flex h-full w-full flex-col overflow-hidden rounded-2xl text-start"
-              >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
-                  <Image
-                    src={`/certificates/${it.id}-thumb.jpg`}
-                    alt={it.title}
-                    fill
-                    sizes="(min-width:768px) 33vw, 100vw"
-                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute inset-x-0 bottom-0 bg-navy-950/80 py-2 text-center text-sm font-semibold text-gold-300 opacity-0 transition-opacity group-hover:opacity-100">
-                    {c.view}
+            <li key={it.id} className="flex flex-col items-center">
+              {/* hanging wire */}
+              <span className="cert-wire" aria-hidden />
+              <button type="button" onClick={() => setOpen(i)} className="cert-frame group" aria-label={`${c.view}: ${it.title}`}>
+                <span className="cert-mat">
+                  <span className="relative block aspect-[4/3] w-full overflow-hidden">
+                    <Image
+                      src={`/certificates/${it.id}-thumb.jpg`}
+                      alt={it.title}
+                      fill
+                      sizes="(min-width:768px) 30vw, 90vw"
+                      className="object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
                   </span>
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-bold text-white">{it.title}</h3>
-                  <p className="mt-1 text-sm text-gold-300">{it.issuer}</p>
-                  <p className="mt-3 text-sm text-white/65" dir="auto">{it.detail}</p>
-                </div>
+                </span>
+                <span className="cert-shine" aria-hidden />
+                <span className="cert-seal" aria-hidden>
+                  <CheckIcon className="h-5 w-5" />
+                </span>
+                <span className="cert-view">{c.view}</span>
               </button>
+              <div className="mt-6 text-center">
+                <span className="inline-block rounded-full border border-gold-400/40 bg-gold-400/10 px-3 py-0.5 text-xs font-semibold text-gold-300">
+                  {c.verified}
+                </span>
+                <h3 className="mt-3 text-xl font-bold text-white">{it.title}</h3>
+                <p className="mt-1 text-sm text-gold-300">{it.issuer}</p>
+                <p className="mt-2 text-sm text-white/60" dir="auto">{it.detail}</p>
+              </div>
             </li>
           ))}
         </ul>
