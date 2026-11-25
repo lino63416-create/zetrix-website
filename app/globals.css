@@ -253,3 +253,77 @@ main li p {
 .marquee-rtl {
   animation-direction: reverse;
 }
+
+/* ---------- Animated outline that traces the letters of the hero slogan ---------- */
+.slogan-outline {
+  position: relative;
+  display: block;
+  isolation: isolate;
+}
+.slogan-outline::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 0.075em transparent;
+  background: linear-gradient(
+    110deg,
+    #e2b956 0%,
+    #fff6d6 10%,
+    #4fb3ff 20%,
+    #1e6fd9 30%,
+    #e2b956 45%,
+    #fff6d6 55%,
+    #4fb3ff 65%,
+    #1e6fd9 75%,
+    #e2b956 90%,
+    #e2b956 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 6px rgba(79, 179, 255, 0.75)) drop-shadow(0 0 16px rgba(79, 179, 255, 0.35)) drop-shadow(0 0 22px rgba(226, 185, 86, 0.3));
+  animation: outline-flow 3.2s linear infinite;
+  pointer-events: none;
+}
+/* thin dark gap between the gold letters and the glowing outline */
+.slogan-outline::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: #0b1830;
+  -webkit-text-stroke: 0.035em #0b1830;
+  pointer-events: none;
+}
+.slogan-outline::before { z-index: -2; }
+@keyframes outline-flow {
+  from { background-position: 0% 0; }
+  to { background-position: 250% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slogan-outline::before { animation: none; }
+}
+
+/* display font for the hero slogan */
+.slogan-outline {
+  font-family: "Lalezar", var(--font-display);
+  font-weight: 400;
+  font-size: 1.15em;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+[dir="ltr"] .slogan-outline {
+  font-family: var(--font-display);
+  font-size: 1em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.slogan-outline > .text-gold-gradient {
+  background-image: linear-gradient(180deg, #fff3c4 0%, #f2cf72 38%, #d9a93a 62%, #b8862a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

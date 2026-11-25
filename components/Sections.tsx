@@ -120,7 +120,9 @@ export function HeroSection({ t, lang }: P) {
             {t.hero.eyebrow}
           </p>
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.15] text-white sm:text-6xl lg:text-7xl">
-            <span className="text-gold-gradient">{t.hero.title}</span>
+            <span className="slogan-outline" data-text={t.hero.title}>
+              <span className="text-gold-gradient">{t.hero.title}</span>
+            </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t.hero.text}</p>
           <div className="mt-9 flex flex-wrap gap-4">
